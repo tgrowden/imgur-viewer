@@ -59,4 +59,4 @@ The project uses [@tanstack/react-router](https://tanstack.com/router/latest) fo
 
 ### Code Quality (linting, etc.)
 
-ESLint + Typescript (with a strict config) was chosen to enforce code-quality standards. [lint-staged](https://github.com/lint-staged/lint-staged) + [husky](https://typicode.github.io/husky/) are used to set up pre-commit hooks to ensure code-quality standards.
+[Biome](https://biomejs.dev/guides/getting-started/) is being used for linting and formatting. [Lefthook](https://github.com/evilmartians/lefthook#install) is being used for pre-commit hooks.
