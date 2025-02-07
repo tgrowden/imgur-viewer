@@ -1,7 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
 import './index.css'
 import { routeTree } from './routeTree.gen'
@@ -21,7 +21,7 @@ declare module '@tanstack/react-router' {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+// biome-ignore lint/style/noNonNullAssertion: we know the element exists
 const rootElement = document.getElementById('root')!
 
 if (!rootElement.innerHTML) {

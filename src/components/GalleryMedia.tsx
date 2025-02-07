@@ -1,4 +1,4 @@
-import { GalleryImage, isVideo } from '@/lib/imgurGalleryApi'
+import { type GalleryImage, isVideo } from '@/lib/imgurGalleryApi'
 import { cn } from '@/lib/utils'
 
 interface VideoOptions {

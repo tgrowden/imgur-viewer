@@ -1,15 +1,15 @@
-import { Link } from '@tanstack/react-router'
 import { useQueryClient } from '@tanstack/react-query'
+import { Link } from '@tanstack/react-router'
 
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import {
-  GalleryItem,
-  isGalleryAlbum,
-  GalleryAlbum,
-  GalleryImage,
+  type GalleryAlbum,
+  type GalleryImage,
+  type GalleryItem,
   getImgurGalleryAlbumQueryOptions,
   getImgurImageQueryOptions,
+  isGalleryAlbum,
 } from '@/lib/imgurGalleryApi'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { GalleryMedia } from './GalleryMedia'
 
 interface GalleryLinkCardProps {
@@ -58,7 +58,7 @@ export function GalleryLinkCard({ data }: GalleryLinkCardProps) {
     })
 
     return (
-      <Link to={`/album/$id`} params={{ id: data.id }} className="hover:underline h-[fit-content]">
+      <Link to="/album/$id" params={{ id: data.id }} className="hover:underline h-[fit-content]">
         <GalleryAlbumCard album={data} />
       </Link>
     )
@@ -73,7 +73,7 @@ export function GalleryLinkCard({ data }: GalleryLinkCardProps) {
   })
 
   return (
-    <Link to={`/image/$id`} params={{ id: data.id }} className="hover:underline h-[fit-content]">
+    <Link to="/image/$id" params={{ id: data.id }} className="hover:underline h-[fit-content]">
       <GalleryImageCard image={data} />
     </Link>
   )

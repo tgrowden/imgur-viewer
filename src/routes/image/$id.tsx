@@ -1,10 +1,10 @@
-import { createFileRoute, getRouteApi, useLocation, Link } from '@tanstack/react-router'
 import { useSuspenseQuery } from '@tanstack/react-query'
+import { Link, createFileRoute, getRouteApi, useLocation } from '@tanstack/react-router'
 
-import { getImgurImageQueryOptions } from '@/lib/imgurGalleryApi'
-import { GalleryImageCard } from '@/components/GalleryLinkCard'
 import { FullscreenMediaDialog } from '@/components/FullscreenMediaDialog'
+import { GalleryImageCard } from '@/components/GalleryLinkCard'
 import { RedirectErrorHandler } from '@/components/RedirectErrorHandler'
+import { getImgurImageQueryOptions } from '@/lib/imgurGalleryApi'
 
 export const Route = createFileRoute('/image/$id')({
   component: RouteComponent,
@@ -42,7 +42,6 @@ function RouteComponent() {
         image={img}
         open={isOpen}
         onOpenChange={(open) => {
-          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           n({ hash: open ? hash : '' })
         }}
       />
