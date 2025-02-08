@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as FavoritesIndexImport } from './routes/favorites/index'
 import { Route as ImageIdImport } from './routes/image/$id'
 import { Route as AlbumIdImport } from './routes/album/$id'
 
@@ -20,6 +21,12 @@ import { Route as AlbumIdImport } from './routes/album/$id'
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FavoritesIndexRoute = FavoritesIndexImport.update({
+  id: '/favorites/',
+  path: '/favorites/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -60,6 +67,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageIdImport
       parentRoute: typeof rootRoute
     }
+    '/favorites/': {
+      id: '/favorites/'
+      path: '/favorites'
+      fullPath: '/favorites'
+      preLoaderRoute: typeof FavoritesIndexImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -69,12 +83,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/album/$id': typeof AlbumIdRoute
   '/image/$id': typeof ImageIdRoute
+  '/favorites': typeof FavoritesIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/album/$id': typeof AlbumIdRoute
   '/image/$id': typeof ImageIdRoute
+  '/favorites': typeof FavoritesIndexRoute
 }
 
 export interface FileRoutesById {
@@ -82,14 +98,15 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/album/$id': typeof AlbumIdRoute
   '/image/$id': typeof ImageIdRoute
+  '/favorites/': typeof FavoritesIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/album/$id' | '/image/$id'
+  fullPaths: '/' | '/album/$id' | '/image/$id' | '/favorites'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/album/$id' | '/image/$id'
-  id: '__root__' | '/' | '/album/$id' | '/image/$id'
+  to: '/' | '/album/$id' | '/image/$id' | '/favorites'
+  id: '__root__' | '/' | '/album/$id' | '/image/$id' | '/favorites/'
   fileRoutesById: FileRoutesById
 }
 
@@ -97,12 +114,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AlbumIdRoute: typeof AlbumIdRoute
   ImageIdRoute: typeof ImageIdRoute
+  FavoritesIndexRoute: typeof FavoritesIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AlbumIdRoute: AlbumIdRoute,
   ImageIdRoute: ImageIdRoute,
+  FavoritesIndexRoute: FavoritesIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -117,7 +136,8 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/album/$id",
-        "/image/$id"
+        "/image/$id",
+        "/favorites/"
       ]
     },
     "/": {
@@ -128,6 +148,9 @@ export const routeTree = rootRoute
     },
     "/image/$id": {
       "filePath": "image/$id.tsx"
+    },
+    "/favorites/": {
+      "filePath": "favorites/index.tsx"
     }
   }
 }

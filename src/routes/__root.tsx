@@ -35,7 +35,17 @@ function RootComponent() {
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-              <Link to="/">Image Search</Link>
+              <Link to="/" className="data-[status='active']:font-bold">
+                Image Search
+              </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <Link to="/favorites" className="data-[status='active']:font-bold">
+                Favorites
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
