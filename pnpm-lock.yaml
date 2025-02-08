@@ -82,6 +82,9 @@ devDependencies:
   '@tanstack/router-plugin':
     specifier: ^1.95.6
     version: 1.98.3(@tanstack/react-router@1.98.3)(vite@6.0.11)
+  '@taylorgrowden/biome-config':
+    specifier: ^1.0.1
+    version: 1.0.1(@biomejs/biome@1.9.4)
   '@types/node':
     specifier: 22.12.0
     version: 22.12.0
@@ -2217,6 +2220,14 @@ packages:
   /@tanstack/virtual-file-routes@1.98.1:
     resolution: {integrity: sha512-LBO5HEs6F9oeEgvqmu5ghJSyIQ242KwUJSlxq34AmMYDFOm5m9pVzRMbqbXFKva5CjDQcN8a7SNSy/hYovAwLg==}
     engines: {node: '>=12'}
+    dev: true
+
+  /@taylorgrowden/biome-config@1.0.1(@biomejs/biome@1.9.4):
+    resolution: {integrity: sha512-KLCdln1FYB8gHDomsBVrUoVP7B47DtljfoWmbK2riIUT3hEtX831khDqd/o4aA+3oT2+N4PJgYDxzu9jIS24Eg==}
+    peerDependencies:
+      '@biomejs/biome': ^1.9.4
+    dependencies:
+      '@biomejs/biome': 1.9.4
     dev: true
 
   /@types/babel__core@7.20.5:
