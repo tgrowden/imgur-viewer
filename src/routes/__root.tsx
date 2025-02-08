@@ -31,25 +31,27 @@ export const Route = createRootRouteWithContext<{
 function RootComponent() {
   return (
     <>
-      <NavigationMenu className="px-2 py-4">
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-              <Link to="/" className="data-[status='active']:font-bold">
-                Image Search
-              </Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
+      <div className="sticky top-0 z-50 bg-background mb-0.5">
+        <NavigationMenu className="px-2 py-4">
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                <Link to="/" className="data-[status='active']:font-bold">
+                  Image Search
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-              <Link to="/favorites" className="data-[status='active']:font-bold">
-                Favorites
-              </Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                <Link to="/favorites" className="data-[status='active']:font-bold">
+                  Favorites
+                </Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
       <div className="container mx-auto px-6 pb-16">
         <Outlet />
       </div>
