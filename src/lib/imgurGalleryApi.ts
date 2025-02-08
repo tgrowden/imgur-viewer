@@ -20,7 +20,7 @@ export const SortOptions = ['time', 'top', 'viral'] as const
 export const WindowOptions = ['day', 'week', 'month', 'year', 'all'] as const
 
 export const searchParamSchema = z.object({
-  q: z.string().trim().optional(),
+  q: z.string().trim().optional().default(''),
   sort: z.enum(SortOptions).default('time'),
   window: z.enum(WindowOptions).optional().default('all'),
   page: z.number().default(0),
