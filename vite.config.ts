@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
-import path from 'path'
+import path from 'node:path'
+import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from 'tailwindcss'
-import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
+import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({

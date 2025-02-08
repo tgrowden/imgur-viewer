@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react'
-import { createFileRoute, Link, getRouteApi } from '@tanstack/react-router'
 import { useSuspenseQuery } from '@tanstack/react-query'
+import { Link, createFileRoute, getRouteApi } from '@tanstack/react-router'
 import { ChevronDown } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
+import { GalleryLinkCard } from '@/components/GalleryLinkCard'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -13,9 +14,8 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Input } from '@/components/ui/input'
-import { getImgurGallerySearchQueryOptions, searchParamSchema, SortOptions, WindowOptions } from '@/lib/imgurGalleryApi'
-import { GalleryLinkCard } from '@/components/GalleryLinkCard'
 import { Skeleton } from '@/components/ui/skeleton'
+import { SortOptions, WindowOptions, getImgurGallerySearchQueryOptions, searchParamSchema } from '@/lib/imgurGalleryApi'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
@@ -57,6 +57,7 @@ function LoadingComponent() {
       </div>
       <div className="w-full mt-10 gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {Array.from({ length: 50 }, (_, i) => (
+          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
           <Skeleton className="w-full h-full min-h-60 rounded-md" key={i} />
         ))}
       </div>
@@ -198,11 +199,7 @@ function Results() {
                   })}
                   disabled={search.page === 0}
                 >
-                  <Button
-                    variant={search.page === 0 ? 'ghost' : 'outline'}
-                    disabled={search.page === 0}
-                    onClick={() => {}}
-                  >
+                  <Button variant={search.page === 0 ? 'ghost' : 'outline'} disabled={search.page === 0}>
                     Previous
                   </Button>
                 </Link>

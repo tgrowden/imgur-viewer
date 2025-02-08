@@ -1,7 +1,7 @@
-import React from 'react'
 import { Toaster } from '@/components/ui/sonner'
-import { Outlet, createRootRouteWithContext, Link } from '@tanstack/react-router'
-import { QueryClient } from '@tanstack/react-query'
+import type { QueryClient } from '@tanstack/react-query'
+import { Link, Outlet, createRootRouteWithContext } from '@tanstack/react-router'
+import React from 'react'
 
 import {
   NavigationMenu,

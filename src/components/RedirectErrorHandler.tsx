@@ -1,4 +1,4 @@
-import { ErrorComponent, ErrorComponentProps, Navigate } from '@tanstack/react-router'
+import { ErrorComponent, type ErrorComponentProps, Navigate } from '@tanstack/react-router'
 import { AxiosError } from 'axios'
 import { toast } from 'sonner'
 

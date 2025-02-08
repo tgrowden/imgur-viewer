@@ -1,6 +1,6 @@
 import { GalleryMedia } from '@/components/GalleryMedia'
 import { Dialog, DialogContent } from '@/components/ui/dialog'
-import { GalleryImage } from '@/lib/imgurGalleryApi'
+import type { GalleryImage } from '@/lib/imgurGalleryApi'
 
 interface FullscreenMediaDialogProps {
   open: boolean
