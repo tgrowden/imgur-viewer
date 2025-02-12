@@ -5,11 +5,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import './index.css'
+import { NotFound } from '@/components/NotFound'
 import { routeTree } from './routeTree.gen'
 
 const queryClient = new QueryClient()
 
 const router = createRouter({
+  defaultNotFoundComponent: NotFound,
   routeTree,
   context: {
     queryClient,
