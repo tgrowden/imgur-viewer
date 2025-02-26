@@ -53,10 +53,7 @@ export function GalleryImageCard({ image }: { image: GalleryImage }) {
     <Card>
       <CardHeader className="py-4">
         <CardTitle className="flex items-center justify-between">
-          <span
-            title={image.title ?? undefined}
-            className="overflow-ellipsis max-w-full whitespace-nowrap overflow-hidden"
-          >
+          <span title={image.title ?? undefined} className="text-ellipsis max-w-full whitespace-nowrap overflow-hidden">
             {image.title}
           </span>
           <div>
